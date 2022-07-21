@@ -1,0 +1,94 @@
+// This is Iverson, a dropdown guessing game to find out the leaders for the 21-22 NBA Season
+onEvent("nxtbSrn1", "click", function( ) {
+  setScreen("scoringscreen");
+});
+//The next 2 onevent statements give hints
+onEvent("zionjersey", "click", function( ) {
+  console.log("He wears number 21.");
+});
+onEvent("basketball", "click", function( ) {
+  console.log("He's a 5 time all star.");
+});
+//Scorers Dropdown Box
+onEvent("scorerDrop", "change", function( ) {
+  var scorer = getProperty("scorerDrop", "value");
+  if (scorer == "Joel Embiid") {
+    console.log("You got it correct, You may proceed.");
+  } else if ((scorer != "Joel Embiid")) {
+    console.log("Try again. Remember your hints.");
+  }
+});
+onEvent("nxtBscore", "click", function( ) {
+  setScreen("asstScreen");
+});
+//This is giving the assist screen more value
+onEvent("asstDrop", "change", function( ) {
+  var assist = getProperty("asstDrop", "value");
+  if (assist == "Chris Paul") {
+    console.log("Another correct answer! You may proceed.");
+  } else if ((assist != "Chris Paul")) {
+    console.log("Try Again, your hints matter");
+  }
+});
+// hint code for the assist screen
+onEvent("magicJersey", "click", function( ) {
+  console.log("He wears number 3");
+});
+onEvent("assistbasketball", "click", function( ) {
+  console.log("12 time All-Star");
+});
+//Advances you to rebounding screen or back to scoring screen
+onEvent("asisstnext", "click", function( ) {
+  setScreen("rebscreen");
+});
+onEvent("backbuttonAST", "click", function( ) {
+  setScreen("scoringscreen");
+});
+//Options for rebounding category
+onEvent("REBdrop", "change", function( ) {
+  var rebound = getProperty("REBdrop", "value");
+  if (rebound == "Rudy Gobert") {
+    console.log("Nice streak you have. You may proceed");
+    setScreen("stlscreen");
+  } else if ((rebound != "Rudy Gobert")) {
+    console.log("Guess again, use your hints I gave you and try again.");
+  }
+});
+//hints for rebound category
+onEvent("timmyD", "click", function( ) {
+  console.log("3 time All-Star");
+});
+onEvent("rebbasketball", "click", function( ) {
+  console.log("Plays in the Western Conference");
+});
+//Advances you to next or previous screen
+onEvent("rebnxtbutton", "click", function( ) {
+  setScreen("stlscreen");
+});
+onEvent("backbuttonREB", "click", function( ) {
+  setScreen("asstScreen");
+});
+//Options for Steal Category
+onEvent("stealdropdown", "change", function( ) {
+  var steal = getProperty("stealdropdown", "value");
+  if (steal == "Dejounte Murray") {
+    setScreen("endscree");
+  } else if ((steal != "Dejounte Murray")) {
+    console.log("Use your hints and try again, Youre so close to winning.");
+  }
+});
+//back button to go to rebounding screen
+onEvent("stlback", "click", function( ) {
+  setScreen("rebscreen");
+});
+//Hints for steal screen
+onEvent("theglove", "click", function( ) {
+  console.log("One time All-Star");
+});
+onEvent("stlbasketball", "click", function( ) {
+  console.log("Plays the Guard position");
+});
+//Play again for end screen
+onEvent("playagainbutton", "click", function( ) {
+  setScreen("titleScreen");
+});
